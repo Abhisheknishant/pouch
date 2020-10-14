@@ -4,6 +4,7 @@ set -euo pipefail
 
 readonly LOCAL_PERSIST_VERSION="1.3.0"
 readonly cmd="local-persist"
+readonly arch=$(uname -m)
 
 # local_persist::check_version checks the command and the version.
 local_persist::check_version() {
