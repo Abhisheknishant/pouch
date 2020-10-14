@@ -49,6 +49,7 @@ func (suite *PouchRunBlkioSuite) TestRunBlockIOWeight(c *check.C) {
 	// test if the value is in inspect result
 	blkioWeight, err := inspectFilter(cname, ".HostConfig.BlkioWeight")
 	c.Assert(err, check.IsNil)
+	fmt.Println("Text blkioWeight", err)
 	c.Assert(blkioWeight, check.Equals, strvalue)
 
 	// test if cgroup has record the real value
