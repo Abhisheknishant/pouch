@@ -83,7 +83,8 @@ jobs:
       script: ./travis_ci.sh integrationtest 4 0
     - arch: arm64
       stage: test
-      name: "Integration test 0"  
+      name: "Integration test 0"
+      script: ./travis_ci.sh integrationtest 4 0
     - arch: amd64
       stage: test
       name: "Integration test 1"
