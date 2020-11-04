@@ -61,20 +61,24 @@ jobs:
       script: ./travis_ci.sh criv1alpha2test
 
     - arch: amd64
+      dist: focal
       stage: test
       name: "Node e2e test"
       script: ./travis_ci.sh nodee2etest
-    - arch: arm64
+    - arch: arm64-graviton
+      dist: focal
+      virt: vm
+      group: edge
       stage: test
       name: "Node e2e test"
       script: 
-        - sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted universe multiverse"
-        - sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted universe multiverse"
-        - sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse"
-        - sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted universe multiverse"
-        - sudo apt-get update
-        - sudo apt-get install linux-headers-`uname -r`
-        - sudo apt-get install --reinstall linux-image-`uname -r`
+        #- sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted universe multiverse"
+        #- sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic-updates main restricted universe multiverse"
+        #- sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic-backports main restricted universe multiverse"
+        #- sudo add-apt-repository "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted universe multiverse"
+        #- sudo apt-get update
+        #- sudo apt-get install linux-headers-`uname -r`
+        #- sudo apt-get install --reinstall linux-image-`uname -r`
         - ./travis_ci.sh nodee2etest
 
     - arch: amd64
