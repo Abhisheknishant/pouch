@@ -69,6 +69,7 @@ jobs:
       dist: focal
       virt: vm
       group: edge
+      install: skip
       stage: test
       name: "Node e2e test"
       script: 
