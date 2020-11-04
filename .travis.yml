@@ -64,6 +64,7 @@ jobs:
       dist: focal
       stage: test
       name: "Node e2e test"
+      install: skip
       script: ./travis_ci.sh nodee2etest
     - arch: arm64-graviton
       dist: focal
