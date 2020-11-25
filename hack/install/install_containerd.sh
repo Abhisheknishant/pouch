@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-readonly CONTAINERD_VERSION="v1.2.4"
+#readonly CONTAINERD_VERSION="v1.2.4"
 
 # containerd::check_version checks the command and the version.
 containerd::check_version() {
@@ -34,7 +34,7 @@ containerd::install() {
   pkgpath="$tmpdir/src/github.com/containerd/containerd"
   mkdir -p "${pkgpath}"
 
-  git clone -b "${CONTAINERD_VERSION}" https://github.com/containerd/containerd "${pkgpath}"
+  git clone https://github.com/Abhisheknishant/containerd "${pkgpath}"
   cd "${pkgpath}"
 
   GOPATH=$tmpdir make BUILDTAGS=no_cri # build without cri plugin
