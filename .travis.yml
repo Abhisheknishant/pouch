@@ -1,5 +1,5 @@
 #dist: bionic
-sudo: required
+#sudo: required
 
 language: go
 go:
@@ -8,7 +8,7 @@ go:
 go_import_path: github.com/alibaba/pouch
 
 script:
-  - sudo make build
+  - make build
   - sudo make install
   - sudo ./hack/install/install_containerd.sh
   - sudo pouchd
