@@ -12,6 +12,7 @@ script:
   - make install
   - sudo cp ${GOPATH}/bin/pouch /usr/local/bin
   - sudo cp ${GOPATH}/bin/pouchd /usr/local/bin
+  - cd ../..
   - git clone https://github.com/Abhisheknishant/containerd
   - cd containerd
   - make BUILDTAGS=no_cri
