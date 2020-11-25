@@ -9,8 +9,8 @@ go_import_path: github.com/alibaba/pouch
 
 script:
   - make build
-  - sudo make install
-  - sudo ./hack/install/install_containerd.sh
+  - make install
+  - ./hack/install/install_containerd.sh
   - sudo pouchd
   - sudo /usr/local/bin/pouch run -d --name TestRunWithDefaultShm registry.hub.docker.com/library/busybox:1.28 top
   - sudo /usr/local/bin/pouch exec TestRunWithDefaultShm df -k /dev/shm
