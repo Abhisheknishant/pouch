@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-#readonly CONTAINERD_VERSION="v1.2.4"
+readonly CONTAINERD_VERSION="v1.2.4"
 
 # containerd::check_version checks the command and the version.
 containerd::check_version() {
