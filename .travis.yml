@@ -13,12 +13,13 @@ script:
   - sudo cp ${GOPATH}/bin/pouch /usr/local/bin
   - sudo cp ${GOPATH}/bin/pouchd /usr/local/bin
   - cd ../..
-  - git clone https://github.com/Abhisheknishant/containerd
-  - cd containerd
-  - make BUILDTAGS=no_cri
-  - make install
+  #- git clone https://github.com/Abhisheknishant/containerd
+  #- cd containerd
+  #- make BUILDTAGS=no_cri
+  #- make install
+  #- sudo cp ${GOPATH}/bin/containerd /usr/local/bin
+  - ./hack/install/install_containerd.sh
   - sudo cp ${GOPATH}/bin/containerd /usr/local/bin
-  #- ./hack/install/install_containerd.sh
   - sudo pouchd
   - sudo /usr/local/bin/pouch run -d --name TestRunWithDefaultShm registry.hub.docker.com/library/busybox:1.28 top
   - sudo /usr/local/bin/pouch exec TestRunWithDefaultShm df -k /dev/shm
