@@ -1,4 +1,4 @@
-#dist: bionic
+dist: focal
 #sudo: required
 
 language: go
@@ -8,6 +8,7 @@ go:
 go_import_path: github.com/alibaba/pouch
 
 script:
+  - service docker status
   - make build
   - make install
   - sudo cp ${GOPATH}/bin/pouch /usr/local/bin
