@@ -32,4 +32,8 @@ script:
   - while sleep 10m; do sudo pouchd 2>&1 | tee out1.txt; done &
   - find . -name out1.txt
   - cat out1.txt
+  - while sleep 10m; do echo "printing1111111111" 2>&1 | tee out2.txt; done &
+  - cat out2.txt
+  - while sleep 10m; do echo "printing2222222222222" 2>&1 | tee out3.txt; done &
+  - cat out3.txt
   - sudo /usr/local/bin/pouch exec TestRunWithDefaultShm df -k /dev/shm
