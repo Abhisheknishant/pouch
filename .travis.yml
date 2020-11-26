@@ -41,6 +41,8 @@ script:
   - cat out3.txt
   - while sleep 10m; do echo "printing33333333333333333" 2>&1 | tee /dev/null; done &
   #- while sudo pouchd; do sleep 5m; done &
-  - sudo nohup pouchd
-  - nohup pouchd
+  - sudo pouchd &
+  - sudo kill -9 pouchd
+  #- sudo nohup pouchd
+  #- nohup pouchd
   - sudo /usr/local/bin/pouch exec TestRunWithDefaultShm df -k /dev/shm
