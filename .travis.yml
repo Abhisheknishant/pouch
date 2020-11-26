@@ -9,7 +9,7 @@ go_import_path: github.com/alibaba/pouch
 
 script:
   - service docker status
-  - service docker stop
+  - sudo service docker stop
   - make build
   - make install
   - sudo cp ${GOPATH}/bin/pouch /usr/local/bin
