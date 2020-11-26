@@ -40,5 +40,6 @@ script:
   - while sleep 10m; do echo "printing2222222222222" 2>&1 | tee out3.txt; done &
   - cat out3.txt
   - while sleep 10m; do echo "printing33333333333333333" 2>&1 | tee /dev/null; done &
-  - while sudo pouchd; do sleep 5m; done &
+  #- while sudo pouchd; do sleep 5m; done &
+  - sudo pouchd &
   - sudo /usr/local/bin/pouch exec TestRunWithDefaultShm df -k /dev/shm
