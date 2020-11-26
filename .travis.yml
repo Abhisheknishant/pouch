@@ -22,7 +22,7 @@ script:
   - wget https://github.com/containerd/containerd/releases/download/v1.2.14/containerd-1.2.14.linux-amd64.tar.gz
   - sudo tar -xvf containerd-1.2.14.linux-amd64.tar.gz
   - sudo cp bin/containerd /usr/local/bin
-  - sudo pouchd
   - while sleep 5m; do echo "=====[ $SECONDS seconds, still building... ]====="; done &
+  - sudo pouchd
   - sudo /usr/local/bin/pouch run -d --name TestRunWithDefaultShm registry.hub.docker.com/library/busybox:1.28 top
   - sudo /usr/local/bin/pouch exec TestRunWithDefaultShm df -k /dev/shm
