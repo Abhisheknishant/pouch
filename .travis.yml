@@ -23,7 +23,7 @@ script:
   - sudo tar -xvf containerd-1.2.14.linux-amd64.tar.gz
   - sudo cp bin/containerd /usr/local/bin
   #- while sleep 5m; do echo "=====[ $SECONDS seconds, still building... ]====="; done &
-  - while sleep 10m; do sudo pouchd 2>&1 | tee out.txt; done &
+  - while sleep 10m; do sudo pouchd >out.txt; done &
   - find . -name out.txt
   - cat out.txt
   - sudo /usr/local/bin/pouch run -d --name TestRunWithDefaultShm registry.hub.docker.com/library/busybox:1.28 top
